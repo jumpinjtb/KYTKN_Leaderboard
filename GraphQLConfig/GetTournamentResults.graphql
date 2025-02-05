@@ -1,0 +1,30 @@
+query tournaments($tournamentQuery: TournamentQuery!, $eventFilter: EventFilter) {
+    tournaments(query: $tournamentQuery) {
+        pageInfo {
+            page,
+            totalPages,
+            perPage,
+            total
+        }
+        nodes {
+            id,
+            name,
+            city,
+            endAt,
+            events(filter: $eventFilter){
+                id,
+                name,
+                numEntrants,
+                entrants{
+                    nodes {
+                        name,
+                        standing {
+                            placement
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
