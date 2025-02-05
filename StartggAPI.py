@@ -15,7 +15,7 @@ class StartggAPI:
         transport = AIOHTTPTransport(url=self.url, headers=self.headers)
         client = Client(transport=transport, fetch_schema_from_transport=True)
         result = client.execute(request, variable_values=variables)
-        print(result)
+        return result
 
     def build_tournament_request(self):
         with open("GraphQLConfig/GetTournamentResults.graphql", "r") as file:
