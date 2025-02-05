@@ -2,7 +2,7 @@ import csv
 
 def dump_to_csv(result):
 
-    #TODO: Everything about this it hot garbage and I hate it
+    #TODO: Everything about this is hot garbage and I hate it
     with open("KYTKN_Leaderboard.csv", 'w', newline='') as csv_file:
         i = 0
         while i < len(result):
