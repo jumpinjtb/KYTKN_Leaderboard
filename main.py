@@ -3,9 +3,7 @@ import WriteCSV
 
 def main():
     api = StartggAPI.StartggAPI()
-    request = api.build_tournament_request()
-    variables = api.build_tournament_variables(1735711200, 1704088800, "KY")
-    result = api.call_api(request, variables)
+    result = api.get_tournament_results(1735711200, 1704088800, "KY")
     print(result)
 
     WriteCSV.dump_to_csv(result)
